@@ -22,6 +22,7 @@
     </head>
 
   <body class="h-full">
+        
 <div class="min-h-full">
   <nav class="bg-gray-800/50">
     <div class="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
@@ -34,7 +35,7 @@
             <div class="flex items-baseline space-x-4 ml-10">
               <!-- Current: "bg-gray-950/50 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
               <x-nav-link type='a' href="/"  :active="request()->is('/')">Home</x-nav-link>
-              <x-nav-link type='a' href="/job" :active="request()->is('job')" >About</x-nav-link>
+              <x-nav-link type='a' href="/jobs" :active="request()->is('jobs')" >Jobs</x-nav-link>
               <x-nav-link type='button' href="/contact" :active="request()->is('contact')">Contact</x-nav-link>
             </div>
           </div>
@@ -78,7 +79,7 @@
       <div class="space-y-1 px-2 sm:px-3 pt-2 pb-3">
         <!-- Current: "bg-gray-950/50 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
         <a href="/" aria-current="page" class="{{ request()->is('/') ? 'bg-gray-950/50 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white' }} block  px-3 py-2 rounded-md font-medium text-base">Home</a>
-        <a  href="/job" class="{{ request()->is('job') ? 'bg-gray-950/50 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white' }} block  px-3 py-2 rounded-md font-medium  text-base">About</a>
+        <a  href="/jobs" class="{{ request()->is('jobs') ? 'bg-gray-950/50 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white' }} block  px-3 py-2 rounded-md font-medium  text-base">Jobs</a>
         <a href="/contact" class="{{ request()->is('contact') ? 'bg-gray-950/50 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white' }} block  px-3 py-2 rounded-md font-medium text-base">Contact</a>
       </div>
       <div class="pt-4 pb-3 border-white/10 border-t">
