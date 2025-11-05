@@ -104,8 +104,11 @@
   </nav>
 
   <header class="after:absolute relative after:inset-x-0 after:inset-y-0 bg-gray-800 after:border-white/10 after:border-y after:pointer-events-none">
-    <div class="mx-auto px-4 sm:px-6 lg:px-8 py-6 max-w-7xl text-white">
+    <div class="flex justify-between mx-auto px-4 sm:px-6 lg:px-8 py-6 max-w-7xl text-white">
+      <h1>
         {{ $heading }}
+      </h1>
+      <x-button href="/jobs/create">Create Job</x-button>
     </div>
   </header>
   <main>

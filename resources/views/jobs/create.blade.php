@@ -20,8 +20,16 @@
                             <div class="mt-2">
                                 <div class="flex items-center bg-white/5 pl-3 rounded-md outline-1 outline-white/10 focus-within:outline-2 focus-within:outline-indigo-500 -outline-offset-1 focus-within:-outline-offset-2">
 
-                                    <input id="title" type="text" name="title" placeholder="Shift Manager" class="block bg-transparent py-1.5 pr-3 pl-1 focus:outline-none min-w-0 placeholder:font-extralight text-white placeholder:text-gray-300 sm:text-sm/6 text-base grow" />
+                                    <input id="title" type="text" name="title" placeholder="Shift Manager" class="block bg-transparent py-1.5 pr-3 pl-1 focus:outline-none min-w-0 placeholder:font-extralight text-white placeholder:text-gray-300 sm:text-sm/6 text-base grow"  required />
                                 </div>
+
+                                @error('title')
+                                <p class="text-amber-900 text-semibold">
+                                    {{$message}}
+                                </p>
+                                @enderror
+                                
+
                             </div>
                         </div>
 
@@ -31,8 +39,13 @@
                             <div class="mt-2">
                                 <div class="flex items-center bg-white/5 pl-3 rounded-md outline-1 outline-white/10 focus-within:outline-2 focus-within:outline-indigo-500 -outline-offset-1 focus-within:-outline-offset-2">
 
-                                    <input id="salary" type="text" name="salary" placeholder="$40,000" class="block bg-transparent py-1.5 pr-3 pl-1 focus:outline-none min-w-0 placeholder:font-extralight text-white placeholder:text-gray-300 sm:text-sm/6 text-base grow" />
+                                    <input id="salary" type="text" name="salary" placeholder="$40,000" class="block bg-transparent py-1.5 pr-3 pl-1 focus:outline-none min-w-0 placeholder:font-extralight text-white placeholder:text-gray-300 sm:text-sm/6 text-base grow"  required/>
                                 </div>
+                                @error('salary')
+                                <p class="text-amber-900 text-semibold">
+                                    {{$message}}
+                                </p>
+                                @enderror
                             </div>
                         </div>
 
@@ -41,7 +54,13 @@
                 </div>
 
                 
-
+            <!-- @if($errors->any()) 
+            <ul class="space-y-1 text-red-800">
+                @foreach($errors->all() as $error)
+                <li>{{ $error}}</li>
+                @endforeach
+            </ul>
+            @endif -->
                 
             </div>
 
