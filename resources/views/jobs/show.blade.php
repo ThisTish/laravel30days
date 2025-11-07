@@ -2,9 +2,12 @@
     <x-slot:heading class="text-white">
         Job {{$job['id']}}
     </x-slot:heading>
-    <div class="bg-white border border-black size-50 text-xl">
-        <h2>{{ $job['title']}}</h2>
-        <p>{{$job['salary']}}</p>
+    <div class="bg-gray-300 my-5 p-3 rounded-md w-40 h-fit">
+        <h2 class="font-bold text-lg uppercase">{{ $job->title}}</h2>
+        <p>${{ $job->salary}}<small> annual</small></p>
+    </div>
+    <div >
+        <x-button href="/jobs/{{ $job->id }}/edit">Edit Job</x-button>
     </div>
 
 
