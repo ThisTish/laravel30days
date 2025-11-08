@@ -1,0 +1,3 @@
+<div class="flex items-center bg-white/5 pl-3 rounded-md outline-1 outline-white/10 focus-within:outline-2 focus-within:outline-indigo-500 -outline-offset-1 focus-within:-outline-offset-2">
+    <input {{$attributes->merge(["class" => "block bg-transparent py-1.5 pr-3 pl-1 focus:outline-none min-w-0 placeholder:font-extralight text-white placeholder:text-gray-300 sm:text-sm/6 text-base grow"])}} />
+</div>

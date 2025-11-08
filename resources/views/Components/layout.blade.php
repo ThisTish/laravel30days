@@ -50,12 +50,10 @@
               </svg>
             </button>
 
-            <!-- Profile dropdown -->
-              <button class="relative flex items-center rounded-full focus-visible:outline-2 focus-visible:outline-indigo-500 focus-visible:outline-offset-2 max-w-xs">
-                <span class="absolute -inset-1.5"></span>
-                <span class="sr-only">Open user menu</span>
-                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="rounded-full outline outline-white/10 -outline-offset-1 size-8" />
-              </button>
+            @guest
+              <x-nav-link type="a" href="/login" :active="request()->is('login')">Login</x-nav-link>
+              <x-nav-link type="a" href="/register" :active="request()->is('register')">Register</x-nav-link>
+            @endguest
 
           </div>
         </div>
@@ -84,20 +82,14 @@
       </div>
       <div class="pt-4 pb-3 border-white/10 border-t">
         <div class="flex items-center px-5">
-          <div class="shrink-0">
-            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="rounded-full outline outline-white/10 -outline-offset-1 size-10" />
-          </div>
+          
           <div class="ml-3">
-            <div class="font-medium text-white text-base/5">Tom Cook</div>
-            <div class="font-medium text-gray-400 text-sm">tom@example.com</div>
-          </div>
-          <button type="button" class="relative ml-auto p-1 rounded-full focus:outline-2 focus:outline-indigo-500 focus:outline-offset-2 text-gray-400 hover:text-white shrink-0">
-            <span class="absolute -inset-1.5"></span>
-            <span class="sr-only">View notifications</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
-              <path d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </button>
+
+          @guest 
+          <x-nav-link type="a" href="/login">Login</x-nav-link>
+          <x-nav-link type="a" href="/register">Register</x-nav-link>
+          @endguest
+
         </div>
       </div>
     </el-disclosure>
