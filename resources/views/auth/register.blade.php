@@ -13,19 +13,19 @@
                     <!-- first-name -->
                     <div class="gap-x-6 gap-y-6 grid grid-cols-1 sm:grid-cols-6 mt-10">
                         <div class="sm:col-span-4">
-                            <x-form-label for="first-name">First Name</x-form-label>
+                            <x-form-label for="first_name">First Name</x-form-label>
                             <div class="mt-2">
-                                <x-form-input id="first-name" name="first-name" placeholder="Joseph" required />
-                                <x-form-error name="first-name" />
+                                <x-form-input id="first_name" name="first_name" placeholder="Joseph" required />
+                                <x-form-error name="first_name" />
                             </div>
                         </div>
 
                         <!-- last name -->
                         <div class="sm:col-span-4">
-                            <x-form-label for="last-name">Last Name</x-form-label>
+                            <x-form-label for="last_name">Last Name</x-form-label>
                             <div class="mt-2">
-                                <x-form-input id="last-name" name="last-name" placeholder="Bossley" required />
-                                <x-form-error name="last-name" />
+                                <x-form-input id="last_name" name="last_name" placeholder="Bossley" required />
+                                <x-form-error name="last_name" />
                             </div>
                         </div>
 
@@ -51,7 +51,7 @@
                         <div class="sm:col-span-4">
                             <label for="confirm_password" class="block font-medium text-white text-sm/6">Confirm Password</label>
                             <div class="mt-2">
-                                <x-form-input id="confirm_password" name="confirm_password" placeholder="**********" required />
+                                <x-form-input type="password" id="confirm_password" name="confirm_password" placeholder="**********" required />
                                 <x-form-error name='confirm_password' />
                             </div>
                         </div>

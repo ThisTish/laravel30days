@@ -54,6 +54,9 @@
               <x-nav-link type="a" href="/login" :active="request()->is('login')">Login</x-nav-link>
               <x-nav-link type="a" href="/register" :active="request()->is('register')">Register</x-nav-link>
             @endguest
+            @auth
+              <x-nav-link type="a" href="/login" :active="request()->is('login')">Logout</x-nav-link>
+            @endauth
 
           </div>
         </div>
@@ -89,6 +92,13 @@
           <x-nav-link type="a" href="/login">Login</x-nav-link>
           <x-nav-link type="a" href="/register">Register</x-nav-link>
           @endguest
+
+          @auth
+
+          
+          <!-- convert to form -->
+              <x-nav-link type="a" href="/login" :active="request()->is('login')">Logout</x-nav-link>
+            @endauth
 
         </div>
       </div>
