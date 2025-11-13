@@ -54,10 +54,14 @@
               <x-nav-link type="a" href="/login" :active="request()->is('login')">Login</x-nav-link>
               <x-nav-link type="a" href="/register" :active="request()->is('register')">Register</x-nav-link>
             @endguest
-            @auth
-              <x-nav-link type="a" href="/login" :active="request()->is('login')">Logout</x-nav-link>
-            @endauth
+                  @auth
 
+          
+          <form action="/logout" method="POST">
+            @csrf 
+            <x-submit-button>Logout</x-submit-button>
+          </form>
+            @endauth
           </div>
         </div>
         <div class="md:hidden flex -mr-2">
@@ -96,8 +100,10 @@
           @auth
 
           
-          <!-- convert to form -->
-              <x-nav-link type="a" href="/login" :active="request()->is('login')">Logout</x-nav-link>
+          <form action="/logout" method="POST">
+            @csrf 
+            <x-submit-button>Logout</x-submit-button>
+          </form>
             @endauth
 
         </div>
