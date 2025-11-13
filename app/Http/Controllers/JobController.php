@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Job;
-
-
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class JobController extends Controller
 {
@@ -50,34 +51,31 @@ class JobController extends Controller
     }
 
 // retrieve job to edit
-    public function edit($id){
-        
-    $job = Job::find($id);
-    if(!$job){
-        return redirect("/jobs");
-    };
-
-    return view('jobs.edit', ['job' => $job]);
+    public function edit(Job $job){
+      
+        return view('jobs.edit', ['job'=> $job]);
 
     }
+
+
 
     // update job with requested data
     public function update(Job $job){
         request()->validate([
         'title'=>['required', 'min:3'],
         'salary'=>['required', 'min:4', 'max:10']
-    ]);
+        ]);
 
-    if(!$job){
-        return redirect("/jobs");  
-    };
-    
-    $job->update([
-        'title'=>request('title'),
-        'salary'=>request('salary')
-    ]);
-    
-    return redirect("/jobs/{$job->id}");
+        if(!$job){
+            return redirect("/jobs");  
+        };
+        
+        $job->update([
+            'title'=>request('title'),
+            'salary'=>request('salary')
+        ]);
+        
+        return redirect("/jobs/{$job->id}");
     }
 
     // delete job

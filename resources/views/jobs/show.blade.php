@@ -7,7 +7,9 @@
         <p>${{ $job->salary}}<small> annual</small></p>
     </div>
     <div >
+        @can('edit', $job)
         <x-button href="/jobs/{{ $job->id }}/edit">Edit Job</x-button>
+        @endcan
     </div>
 
 

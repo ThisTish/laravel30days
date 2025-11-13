@@ -15,19 +15,34 @@ Route::view('/', 'home');
 Route::view('/contact', 'contact');
 
 // JOBS
-Route::resource('jobs', JobController::class
-        // *example if you don't want all issceud(index, store, show, create, update, edit, destroy)
-        // , [
-            // 'except' => ['edit', 'create']
-            // or
-            // 'only' => ['index', 'show']
-        // ]
-);
+// Route::resource('jobs', JobController::class
+//         // *example if you don't want all issceud(index, store, show, create, update, edit, destroy)
+//         // , [
+//             // 'except' => ['edit', 'create']
+//             // or
+//             // 'only' => ['index', 'show']
+//         // ]
+// );
+
+Route::get('/jobs', [JobController::class, 'index']);
+Route::get('/jobs/create', [JobController::class, 'create']);
+Route::post('/jobs', [JobController::class, 'store'])->middleware('auth');
+Route::get('/jobs/{job}', [JobController::class, 'show']);
+Route::patch('/jobs/{job}', [JobController::class, 'update']);
+Route::get('/jobs/{job}/edit', [JobController::class, 'edit'])
+->middleware('auth')
+->can('edit', 'job');
+
+Route::delete('/jobs/{job}', [JobController::class, 'destroy'])
+->middleware('auth')
+->can('edit-job', 'job');
+;
+
 
 // AUTH
 Route::get('/register', [RegisterUserController::class, 'create']);
 Route::post('/register', [RegisterUserController::class, 'store']);
-Route::get('/login', [SessionController::class, 'create']);
+Route::get('/login', [SessionController::class, 'create'])->name('login');
 Route::post('/login', [SessionController::class, 'store']);
 Route::post('/logout', [SessionController::class, 'destroy' ]);
 
